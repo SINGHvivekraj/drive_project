@@ -1,6 +1,7 @@
 const express=require('express');
 const app=express();
 
+
 //congiguring .env file
 const dotenv=require('dotenv');
 dotenv.config();
@@ -9,6 +10,9 @@ dotenv.config();
 const connecttoToDB=require('./config/db');
 connecttoToDB();
 
+const cookieParser=require('cookie-parser')
+
+app.use(cookieParser())
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
