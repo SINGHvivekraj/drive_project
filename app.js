@@ -1,6 +1,14 @@
 const express=require('express');
 const app=express();
 
+//congiguring .env file
+const dotenv=require('dotenv');
+dotenv.config();
+
+//making the db connection
+const connecttoToDB=require('./config/db');
+connecttoToDB();
+
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
